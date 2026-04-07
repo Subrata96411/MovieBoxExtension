@@ -257,7 +257,7 @@ class MovieBoxProvider : MainAPI() {
                     name = this.name + " ${res}p",
                     url = videoUrl,
                     referer = apiHeaders["Referer"]!!,
-                    quality = getQualityFromName("${res}p"),
+                    quality = Qualities.Unknown.value,
                     isM3u8 = videoUrl.contains(".m3u8")
                 )
             )
