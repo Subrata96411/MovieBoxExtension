@@ -232,8 +232,8 @@ class MovieBoxProvider : MainAPI() {
     override suspend fun loadLinks(
         data: String,
         isCasting: Boolean,
-        callback: (ExtractorLink) -> Unit,
-        subtitleCallback: (SubtitleFile) -> Unit
+        subtitleCallback: (SubtitleFile) -> Unit,
+        callback: (ExtractorLink) -> Unit
     ): Boolean {
         val parts = data.split(",")
         if (parts.size < 4) return false
