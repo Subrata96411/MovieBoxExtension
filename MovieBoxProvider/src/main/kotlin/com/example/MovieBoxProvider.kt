@@ -1,6 +1,5 @@
 package com.example
 
-import com.fasterxml.jackson.annotation.JsonProperty
 import com.lagradost.cloudstream3.*
 import com.lagradost.cloudstream3.utils.*
 
@@ -20,43 +19,43 @@ class MovieBoxProvider : MainAPI() {
     )
 
     data class MbSearchResponse(
-        @JsonProperty("data") val data: MbSearchData? = null
+        val data: MbSearchData? = null
     )
 
     data class MbSearchData(
-        @JsonProperty("items") val items: List<MbSearchItem>? = null
+        val items: List<MbSearchItem>? = null
     )
 
     data class MbSearchItem(
-        @JsonProperty("subjectId") val subjectId: String? = null,
-        @JsonProperty("title") val title: String? = null,
-        @JsonProperty("subjectType") val subjectType: Int? = null,
-        @JsonProperty("cover") val cover: MbCover? = null,
-        @JsonProperty("releaseDate") val releaseDate: String? = null,
-        @JsonProperty("detailPath") val detailPath: String? = null,
-        @JsonProperty("subject") val subject: MbSubject? = null
+        val subjectId: String? = null,
+        val title: String? = null,
+        val subjectType: Int? = null,
+        val cover: MbCover? = null,
+        val releaseDate: String? = null,
+        val detailPath: String? = null,
+        val subject: MbSubject? = null
     )
 
     data class MbCover(
-        @JsonProperty("url") val url: String? = null
+        val url: String? = null
     )
 
     data class MbHomeResponse(
-        @JsonProperty("data") val data: MbHomeData? = null
+        val data: MbHomeData? = null
     )
 
     data class MbHomeData(
-        @JsonProperty("operatingList") val operatingList: List<MbOperatingList>? = null
+        val operatingList: List<MbOperatingList>? = null
     )
 
     data class MbOperatingList(
-        @JsonProperty("title") val title: String? = null,
-        @JsonProperty("banner") val banner: MbBanner? = null,
-        @JsonProperty("subjects") val subjects: List<MbSearchItem>? = null
+        val title: String? = null,
+        val banner: MbBanner? = null,
+        val subjects: List<MbSearchItem>? = null
     )
 
     data class MbBanner(
-        @JsonProperty("items") val items: List<MbSearchItem>? = null
+        val items: List<MbSearchItem>? = null
     )
 
     override suspend fun getMainPage(
@@ -132,37 +131,37 @@ class MovieBoxProvider : MainAPI() {
     }
 
     data class MbDetailResponse(
-        @JsonProperty("data") val data: MbDetailData? = null
+        val data: MbDetailData? = null
     )
 
     data class MbDetailData(
-        @JsonProperty("subject") val subject: MbSubject? = null,
-        @JsonProperty("postList") val postList: MbPostList? = null
+        val subject: MbSubject? = null,
+        val postList: MbPostList? = null
     )
 
     data class MbSubject(
-        @JsonProperty("subjectId") val subjectId: String? = null,
-        @JsonProperty("title") val title: String? = null,
-        @JsonProperty("subjectType") val subjectType: Int? = null,
-        @JsonProperty("description") val description: String? = null,
-        @JsonProperty("cover") val cover: MbCover? = null,
-        @JsonProperty("releaseDate") val releaseDate: String? = null,
-        @JsonProperty("detailPath") val detailPath: String? = null,
-        @JsonProperty("stafflist") val stafflist: List<MbStaff>? = null
+        val subjectId: String? = null,
+        val title: String? = null,
+        val subjectType: Int? = null,
+        val description: String? = null,
+        val cover: MbCover? = null,
+        val releaseDate: String? = null,
+        val detailPath: String? = null,
+        val stafflist: List<MbStaff>? = null
     )
 
     data class MbStaff(
-        @JsonProperty("name") val name: String? = null
+        val name: String? = null
     )
 
     data class MbPostList(
-        @JsonProperty("items") val items: List<MbPostItem>? = null
+        val items: List<MbPostItem>? = null
     )
 
     data class MbPostItem(
-        @JsonProperty("episode") val episode: Int? = null,
-        @JsonProperty("season") val season: Int? = null,
-        @JsonProperty("title") val title: String? = null
+        val episode: Int? = null,
+        val season: Int? = null,
+        val title: String? = null
     )
 
     override suspend fun load(url: String): LoadResponse? {
@@ -210,23 +209,23 @@ class MovieBoxProvider : MainAPI() {
     }
 
     data class MbDownloadResponse(
-        @JsonProperty("data") val data: MbDownloadData? = null
+        val data: MbDownloadData? = null
     )
 
     data class MbDownloadData(
-        @JsonProperty("downloads") val downloads: List<MbDownloadItem>? = null,
-        @JsonProperty("captions") val captions: List<MbCaptionItem>? = null
+        val downloads: List<MbDownloadItem>? = null,
+        val captions: List<MbCaptionItem>? = null
     )
 
     data class MbDownloadItem(
-        @JsonProperty("url") val url: String? = null,
-        @JsonProperty("resolution") val resolution: Int? = null
+        val url: String? = null,
+        val resolution: Int? = null
     )
 
     data class MbCaptionItem(
-        @JsonProperty("url") val url: String? = null,
-        @JsonProperty("lanName") val lanName: String? = null,
-        @JsonProperty("lan") val lan: String? = null
+        val url: String? = null,
+        val lanName: String? = null,
+        val lan: String? = null
     )
 
     override suspend fun loadLinks(
